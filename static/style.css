@@ -1,0 +1,238 @@
+/* --- General Setup & Fonts --- */
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* --- Main Dashboard (index.html) --- */
+.main-container {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.main-header {
+    margin-bottom: 3rem;
+}
+
+.main-header h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #1c1e21;
+    margin-bottom: 0.5rem;
+}
+
+.main-header .subtitle {
+    font-size: 1.25rem;
+    color: #606770;
+    font-weight: 300;
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tool-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.tool-card .card-icon {
+    margin-bottom: 1.5rem;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tool-card .card-icon img {
+    height: 100%;
+}
+
+.tool-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #0056b3;
+}
+
+.tool-card p {
+    font-size: 1rem;
+    color: #606770;
+    line-height: 1.5;
+}
+
+/* --- Individual Tool Pages (layout.html) --- */
+.tool-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem 3rem;
+}
+
+.tool-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.tool-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* --- Forms & Upload Area --- */
+.upload-area {
+    border: 2px dashed #ccd0d5;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.upload-area:hover, .upload-area.drag-over {
+    background-color: #e9ecef;
+    border-color: #007bff;
+}
+
+.upload-area input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #606770;
+    text-align: center;
+}
+
+.upload-label .upload-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+}
+
+.upload-label strong {
+    color: #0056b3;
+    font-size: 1.1rem;
+}
+
+.upload-label .drag-text {
+    font-size: 0.9rem;
+    color: #8a8d91;
+}
+
+/* --- File List --- */
+.file-list-container {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.file-item {
+    background-color: #e9ecef;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #1c1e21;
+}
+
+/* --- Buttons & Messages --- */
+.action-button {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+.error-message {
+    color: #dc3545;
+    margin-top: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* --- Spinner --- */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    .tool-container {
+        padding: 1.5rem;
+    }
+    .tool-header h1 {
+        font-size: 2rem;
+    }
+} 

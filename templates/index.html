@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuSuite - Your All-in-One Document Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <header class="main-header">
+            <h1>DocuSuite</h1>
+            <p class="subtitle">The simple, free, and secure way to manage your documents.</p>
+        </header>
+
+        <div class="tool-grid">
+            <!-- PDF Merger Tool -->
+            <a href="{{ url_for('merge_page') }}" class="tool-card">
+                <div class="card-icon">
+                    <img src="{{ url_for('static', filename='icons/merge.svg') }}" alt="Merge Icon">
+                </div>
+                <h2>Merge PDF</h2>
+                <p>Combine multiple PDF files into a single, organized document.</p>
+            </a>
+
+            <!-- Word to PDF Tool -->
+            <a href="{{ url_for('word_to_pdf_page') }}" class="tool-card">
+                <div class="card-icon">
+                    <img src="{{ url_for('static', filename='icons/word-to-pdf.svg') }}" alt="Word to PDF Icon">
+                </div>
+                <h2>Word to PDF</h2>
+                <p>Convert your DOCX files to professional-looking PDFs instantly.</p>
+            </a>
+
+            <!-- PDF to Word Tool -->
+            <a href="{{ url_for('pdf_to_word_page') }}" class="tool-card">
+                <div class="card-icon">
+                    <img src="{{ url_for('static', filename='icons/pdf-to-word.svg') }}" alt="PDF to Word Icon">
+                </div>
+                <h2>PDF to Word</h2>
+                <p>Edit your PDFs by converting them into editable Word documents.</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

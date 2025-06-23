@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}PDF to Word - DocuSuite{% endblock %}
+
+{% block tool_title %}PDF to Word Converter{% endblock %}
+{% block tool_subtitle %}Convert your PDFs into editable Word documents.{% endblock %}
+
+{% block content %}
+<form id="pdf-to-word-form" class="tool-form" enctype="multipart/form-data">
+    <div class="upload-area">
+        <input type="file" id="pdf-file" name="file" accept=".pdf">
+        <label for="pdf-file" class="upload-label">
+            <img src="{{ url_for('static', filename='icons/upload.svg') }}" alt="Upload Icon" class="upload-icon">
+            <strong>Choose a PDF file</strong>
+            <span class="drag-text">or drag it here</span>
+        </label>
+    </div>
+    <div id="file-list" class="file-list-container"></div>
+    <button type="submit" id="convert-button" class="action-button">Convert to Word</button>
+</form>
+<div id="error-message" class="error-message"></div>
+<div id="loading-spinner" class="spinner" style="display: none;"></div>
+{% endblock %} 
